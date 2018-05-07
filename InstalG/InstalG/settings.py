@@ -39,14 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.Usuarios_de_Dep',
     'apps.Instalaciones',
-    'apps.Lista_de_materiales',
-    'apps.Empleados',
-    'apps.Puesto_empleado',
-    'apps.Proveedores',
     'apps.Materiales',
-    'apps.Detalle_compra'
+    'apps.Puesto_Empleado',
+    'apps.Proveedores',
     'apps.Compras',
-    'apps.Ver_lista_materiales',
+    'apps.Detalle_compra',
+
 ]
 
 MIDDLEWARE = [
