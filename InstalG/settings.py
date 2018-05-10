@@ -53,12 +53,12 @@ WSGI_APPLICATION = 'InstalG.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DJANGO_DB_ENGINE', ''),
-        'NAME': os.getenv('DJANGO_DB_NAME', ''),
-        'USER': os.getenv('DJANGO_DB_USER', ''),
-        'PASSWORD': os.getenv('DJANGO_DB_PASS', ''),
-        'HOST': os.getenv('DJANGO_DB_HOST', ''),
-        'PORT': os.getenv('DJANGO_DB_PORT', ''),
+        'ENGINE': os.getenv('DJANGO_DB_ENGINE', 'django.db.backends.mysql'),
+        'NAME': os.getenv('DJANGO_DB_NAME', 'InstalG'),
+        'USER': os.getenv('DJANGO_DB_USER', 'root'),
+        'PASSWORD': os.getenv('DJANGO_DB_PASS', 'root'),
+        'HOST': os.getenv('DJANGO_DB_HOST', '127.0.0.1'),
+        'PORT': os.getenv('DJANGO_DB_PORT', '3306'),
     }
 }
 
