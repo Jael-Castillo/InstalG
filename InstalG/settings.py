@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     'apps.instalaciones',
     'apps.materiales',
     'apps.proveedores',
-    'apps.usuarios_departamentos',
+    'apps.usuarios_departamento',
 ]
 
 MIDDLEWARE = [
