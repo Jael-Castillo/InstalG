@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>{% block title %}Base{% endblock title %}</title>
+
+    {% static "css/app.css" %}
+    {% block extra-css %}{% endblock extra-css %}
+</head>
+<body>
+    {% block content %}{% endblock content %}
+    
+
+    {% static "js/app.js" %}
+    {% block extra-js %}{% endblock extra-js %}
+</body>
+</html>
