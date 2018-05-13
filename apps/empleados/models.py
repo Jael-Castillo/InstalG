@@ -12,10 +12,5 @@ class Empleado(models.Model):
 	delegacion = models.CharField(max_length=50)
 	municipio = models.CharField(max_length=50)
 	codpost = models.CharField(max_length=50)
-	id_puesto = models.ForeignKey(Puesto_empleado, null=False, blank=False, on_delete=models.CASCADE)
+	nombre_puesto = models.CharField(max_length=20)
 
-class Puesto_empleado(models.Model):
-	"""docstring for Puesto_empleado"""
-	id_puesto = models.CharField(max_length=50, primary_key=True)
-	nombre_puesto = models.CharField(max_length=50)
-	tipo_contrato = models.CharField(max_length=50)

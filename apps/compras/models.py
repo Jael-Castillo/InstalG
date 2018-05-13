@@ -17,6 +17,6 @@ class Detalle_Compra(models.Model):
 	folio_compra_pk_fk = models.ManyToManyField(Compra)#muchos a muchos conexión al modelo Compra
 	id_material_pk_fk = models.ManyToManyField(Material)#muchos a muchos conexión al modelo Material
 	nombre_material= models.CharField(max_length=50, primary_key=True)
-	precio_unitario= models.DecimalField(max_digits=5)
+	precio_unitario= models.DecimalField(max_digits=5, decimal_places=2)
 	cantidad_material = models.IntegerField()
-	sub_total = models.DecimalField(max_digits=5)
+	sub_total = models.DecimalField(max_digits=5, decimal_places=2)

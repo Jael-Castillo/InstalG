@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Compra',
             fields=[
                 ('folio_compra', models.CharField(max_length=50, primary_key=True, serialize=False)),
-                ('id_fk_probeveedor', models.ForeingKey(Proveedor, null=True, blank=False, on_delete=models.CASCADE)),
+                ('id_fk_probeveedor', models.ForeignKey(Proveedor, null=True, blank=False, on_delete=models.CASCADE)),
                 ('total', models.IntegerField()),
                 ('iva_compra', models.IntegerField()),
             ],
