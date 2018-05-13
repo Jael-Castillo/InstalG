@@ -1,4 +1,5 @@
-from apps.proveedores.models import Proveedor, Material;
+from apps.proveedores.models import Proveedor
+from apps.materiales.models import Material
 from django.db import models
 
 

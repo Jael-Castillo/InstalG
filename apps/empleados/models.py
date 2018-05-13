@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Empleado(object):
+class Empleado(models.Model):
 	"""docstring for Empleado"""
 	id_empleado = models.CharField(max_length=50, primary_key=True)
 	nombre_usuario = models.CharField(max_length=50)
@@ -14,7 +14,7 @@ class Empleado(object):
 	codpost = models.CharField(max_length=50)
 	id_puesto = models.ForeignKey(Puesto_empleado, null=False, blank=False, on_delete=models.CASCADE)
 
-class Puesto_empleado(object):
+class Puesto_empleado(models.Model):
 	"""docstring for Puesto_empleado"""
 	id_puesto = models.CharField(max_length=50, primary_key=True)
 	nombre_puesto = models.CharField(max_length=50)

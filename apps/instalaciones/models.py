@@ -13,7 +13,7 @@ class Instalacion(models.Model):
 	rfc = models.ForeignKey(Usuario_Departamento, null=False, blank=False, on_delete=models.CASCADE)
 
 	"""Posible tabla de lista de materiales"""
-	class Material_instalacion(object):
+	class Material_instalacion(models.Model):
 		"""docstring for Material_instalacion"""
 		id_instalacion = models.ForeignKey(Instalacíon, null=False, blank=False, on_delete=models.CASCADE)
 		cantidad = models.IntegerField()
