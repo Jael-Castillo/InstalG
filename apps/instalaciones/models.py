@@ -1,3 +1,4 @@
+from apps.usuarios_departamento.models import Usuario_Departamento
 from django.db import models
 
 # Create your models here.
@@ -9,7 +10,7 @@ class Instalacion(models.Model):
 	numero_piso = models.CharField(max_length=50)
 	numero_instal = models.CharField(max_length=50)
 	fecha_instal = models.DecimalField(max_digits=5)
-	rfc = models.ForeingKey(Usurio_Departamento, null=False, blank=False, on_delete=models.CASCADE)
+	rfc = models.ForeingKey(Usuario_Departamento, null=False, blank=False, on_delete=models.CASCADE)
 
 	"""Posible tabla de lista de materiales"""
 	class Material_instalacion(object):
