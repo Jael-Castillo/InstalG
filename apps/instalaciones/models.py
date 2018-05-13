@@ -9,12 +9,12 @@ class Instalacion(models.Model):
 	codigo_postal = models.CharField(max_length=50)
 	numero_piso = models.CharField(max_length=50)
 	numero_instal = models.CharField(max_length=50)
-	fecha_instal = models.DecimalField(max_digits=5)
-	rfc = models.ForeingKey(Usuario_Departamento, null=False, blank=False, on_delete=models.CASCADE)
+	fecha_instal = models.DateTimeField(max_digits=5)
+	rfc = models.ForeignKey(Usuario_Departamento, null=False, blank=False, on_delete=models.CASCADE)
 
 	"""Posible tabla de lista de materiales"""
 	class Material_instalacion(object):
 		"""docstring for Material_instalacion"""
-		id_instalacion = models.ForeingKey(Instalacíon, null=False, blank=False, on_delete=models.CASCADE)
+		id_instalacion = models.ForeignKey(Instalacíon, null=False, blank=False, on_delete=models.CASCADE)
 		cantidad = models.IntegerField()
 			

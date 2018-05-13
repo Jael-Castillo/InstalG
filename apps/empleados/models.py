@@ -12,7 +12,7 @@ class Empleado(object):
 	delegacion = models.CharField(max_length=50)
 	municipio = models.CharField(max_length=50)
 	codpost = models.CharField(max_length=50)
-	id_puesto = models.ForeingKey(Puesto_empleado, null=False, blank=False, on_delete=models.CASCADE)
+	id_puesto = models.ForeignKey(Puesto_empleado, null=False, blank=False, on_delete=models.CASCADE)
 
 class Puesto_empleado(object):
 	"""docstring for Puesto_empleado"""

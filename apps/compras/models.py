@@ -1,5 +1,4 @@
-from apps.proveedores.models import Proveedor
-from apps.materiales.models import Material
+from apps.proveedores.models import Proveedor, Material;
 from django.db import models
 
 
@@ -7,7 +6,7 @@ from django.db import models
 class Compra(models.Model):
 	"""docstring for Compras"""
 	folio_compra = models.CharField(max_length=50, primary_key=True)
-	id_fk_probeveedor = models.ForeingKey(Proveedor, null=False, blank=False, on_delete=models.CASCADE)#relación con llave primaria Proveedor
+	id_fk_probeveedor = models.ForeignKey(Proveedor, null=False, blank=False, on_delete=models.CASCADE)#relación con llave primaria Proveedor
 	total = models.IntegerField()
 	iva_compra = models.IntegerField()
 
