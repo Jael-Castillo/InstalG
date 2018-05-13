@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'apps.materiales',
     'apps.proveedores',
     'apps.usuarios_departamento',
+    'apps.puestos',
 ]
 
 MIDDLEWARE = [
