@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+
+from django.conf.urls import usuario, url
+from . import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', usuario('index.urls')),
+    url(r'', usuarios_departamento('add_usd.urls')),
 ]
