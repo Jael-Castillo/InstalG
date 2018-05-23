@@ -1,5 +1,6 @@
-from apps.puestos.models import Puesto
 from django.db import models
+
+from apps.puestos.models import Puesto
 
 # Create your models here.
 class Empleado(models.Model):

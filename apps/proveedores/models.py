@@ -4,7 +4,7 @@ from django.db import models
 
 class Proveedor(models.Model):
 	"""docstring for Proveedores"""
-	probeveedor = models.CharField(max_length=50, primary_key=True)
+	proveedor = models.CharField(max_length=50, primary_key=True)
 	nombre = models.CharField(max_length=50)
 	apellido = models.CharField(max_length=50)
 	nombre_empresa = models.CharField(max_length=30)

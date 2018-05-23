@@ -20,9 +20,9 @@ INSTALLED_APPS = [
     'apps.proveedores',
     'apps.usuarios_departamento',
     'apps.puestos',
-    'apps.pedido',
+    'apps.pedidos',
     'apps.detalle_pedido',
-    'apps.usuario',
+    'apps.usuarios',
     'apps.detalle_instalacion',
 ]
 

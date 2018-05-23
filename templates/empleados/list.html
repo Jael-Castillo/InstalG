@@ -5,7 +5,9 @@
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+	<h1>Index</h1>
+    <a href="{% url 'empleados:detail' 1 %}">Detail</a>
+    <a href="{% url 'empleados:form' %}">Form</a>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
