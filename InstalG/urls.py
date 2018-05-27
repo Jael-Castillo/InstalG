@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^empleados/', include('apps.empleados.urls', namespace="empleados")),
     # url(r'^instalaciones/', include('apps.instalaciones.urls', namespace="instalaciones")),
-    # url(r'^materiales/', include('apps.materiales.urls', namespace="materiales")),
+    url(r'^materiales/', include('apps.materiales.urls', namespace="materiales")),
     # url(r'^pedidos/', include('apps.pedidos.urls', namespace="pedidos")),
     url(r'^puestos/', include('apps.puestos.urls', namespace="puestos")),
     url(r'^proveedores/', include('apps.proveedores.urls', namespace="proveedores")),

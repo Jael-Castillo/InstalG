@@ -1,12 +1,16 @@
 from django.db import models
 
-# Create your models here.
+from apps.proveedores.models import Proveedor
+
 
 class Material(models.Model):
-	"""docstring for Material"""
-	material = models.CharField(max_length=50, primary_key=True)
-	nombre= models.CharField(max_length=50)
-	existencia= models.IntegerField()
-	descripcion= models.CharField(max_length=50)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    nombre = models.CharField("Nombre", max_length=50)
+    existencia = models.CharField("Existencia", max_length=50)
+    descripcion = models.CharField("Descripción", max_length=50)
 
+    class Meta:
+        ordering = ['id']
 
+    def __str__(self):
+        return f"{self.id} - {self.nombre} {self.apellido_paterno} {self.apellido_materno}"
