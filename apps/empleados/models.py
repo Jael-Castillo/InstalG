@@ -10,19 +10,6 @@ PUESTOS = (
 )
 
 class Empleado(models.Model):
-<<<<<<< HEAD
-	"""docstring for Empleado"""
-	empleado = models.CharField(max_length=50, primary_key=True)
-	puesto =models.ForeignKey(Puesto, null=False, blank=False, on_delete=models.CASCADE)
-	nombre = models.CharField(max_length=50)
-	apellido_pat = models.CharField(max_length=50)
-	apellido_mat = models.CharField(max_length=50)
-	calle = models.CharField(max_length=50)
-	colonia = models.CharField(max_length=50)
-	delegacion = models.CharField(max_length=50)
-	municipio = models.CharField(max_length=50)
-	codpost = models.CharField(max_length=50)
-=======
 	num_empleado = models.CharField("Número de Empleado", max_length=50, primary_key=True)
 	# puesto =models.ForeignKey(Puesto, null=False, blank=False, on_delete=models.CASCADE)
 	puesto = models.CharField("Puesto", max_length=50, choices=PUESTOS)
@@ -37,7 +24,6 @@ class Empleado(models.Model):
 
 	class Meta:
 		ordering = ['num_empleado']
->>>>>>> 9e13f78b6bada44802cce86d864b45ae8531174b
 
 	def __str__(self):
 		return f"{self.num_empleado} - {self.nombre} {self.apellido_paterno} {self.apellido_materno}"

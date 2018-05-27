@@ -1,87 +1,10 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD
-{% block title %}Empleados{% endblock title %}
-=======
 {% block title %}Lista de Empleados{% endblock title %}
->>>>>>> 9e13f78b6bada44802cce86d864b45ae8531174b
 
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-<<<<<<< HEAD
-	<!--<h1>Index</h1>
-    <a href="{% url 'empleados:detail' 1 %}">Detail</a>
-    <a href="{% url 'empleados:form' %}">Form</a>--->
-    <div class="header">
-			<section class="hero is-info">
-			  <div class="hero-body">
-			    <div class="container">
-			      <h1 class="title">
-			      	<a class="button is-link is-info" href="adms.html">
-				   <span class="icon is-small">
-				      <i class="fas fa-arrow-left"></i>
-				   </span>
-			      	</a>
-			        EMPLEADOS
-			      </h1>
-			      <h2 class="subtitle">
-			      
-			      </h2>
-			    </div>
-			  </div>
-			</section>
-
-			<section class="section has-text-centered">
-				
-				<input class="input"type="text-centered" placeholder="Clave del Empleado" style=" width: 50%; margin-left: -5px;"> <!--Estilo Agregado--->	
-				<button class="button is-link">Buscar</button>
-				<button class="button is-info" href="addusd.html">Agregar</button>
-				<button class="button" href="addusd.html">Detalles</button>
-				<button class="button is-success">
-				   <span>Editar</span>
-				   <span class="icon is-small">
-				      <i class="fas fa-edit"></i>
-				   </span>
-				</button>
-				<button class="button is-danger is-outlined">
-				   <span>Elimnar</span>
-				   <span class="icon is-small">
-				      <i class="fas fa-times"></i>
-				   </span>
-				</button>
-				<br>
-				<br>
-				<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-				<tr>
-					<th>Clave</th><!--id_emplado--->
-				    <th>Puesto</th>
-				    <th>Nombre</th>
-				    <th>Apellido Materno</th>
-				    <th>Apellido Materno</th>
-				    <th>Calle</th>
-				    <th>Colonia</th>
-				    <th>Delegación</th>
-				    <th>Municipio</th>
-				    <th>Codigo Post.</th>
-				</tr>
-				<tr>
-					<td><input type="checkbox"></td> 
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td> 
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-			</section>
-
-
-=======
 	<h1 class="title">Lista de empleados</h1>
     <a href="{% url 'index' %}" class="button is-gray">Volver a Inicio</a>
     <a href="{% url 'empleados:create' %}" class="button is-primary">Registrar nuevo empleado</a>
@@ -126,7 +49,6 @@
             {% endfor %}
         </tbody>
     </table>
->>>>>>> 9e13f78b6bada44802cce86d864b45ae8531174b
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
