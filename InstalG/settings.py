@@ -13,17 +13,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.compras',
     'apps.empleados',
     'apps.instalaciones',
     'apps.materiales',
     'apps.proveedores',
-    'apps.usuarios_departamento',
-    'apps.puestos',
     'apps.pedidos',
-    'apps.detalle_pedido',
+    'apps.puestos',
     'apps.usuarios',
-    'apps.detalle_instalacion',
+    'apps.usuarios_departamentos',
+    'bulma',
 ]
 
 MIDDLEWARE = [
@@ -90,4 +88,5 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS  = [os.path.join(BASE_DIR, 'static')] # Indicamos donde se guardarán los archivos estáticos (JS, CSS, IMG)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # Indicamos donde se guardarán los archivos estáticos (JS, CSS, IMG)
+STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]

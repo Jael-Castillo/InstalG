@@ -5,7 +5,9 @@
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+    <h1>Index</h1>
+
+    <a href="{% url 'empleados:list' %}">Empleados</a>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
