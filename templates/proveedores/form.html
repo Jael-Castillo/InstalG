@@ -15,7 +15,7 @@
         {{ form|bulma }}
 
         <br>
-        <a href="{% url 'proveedores:list' %}" class="button is-text">Cancelar</a>
+        <a href="{{ request.META.HTTP_REFERER }}" class="button is-text">Cancelar</a>
         <input type="submit" value="Guardar" class="button is-primary">
     </form>
 {% endblock content %}

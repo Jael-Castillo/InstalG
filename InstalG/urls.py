@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^puestos/', include('apps.puestos.urls', namespace="puestos")),
     url(r'^proveedores/', include('apps.proveedores.urls', namespace="proveedores")),
     # url(r'^usuarios/', include('apps.usuarios.urls', namespace="usuarios")),
-    # url(r'^usuarios-departamentos/', include('apps.usuarios_departamentos.urls', namespace="usuarios_departamentos")),
+    url(r'^usuarios-departamentos/', include('apps.usuarios_departamentos.urls', namespace="usuarios_departamentos")),
 ]
