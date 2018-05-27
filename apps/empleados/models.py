@@ -7,7 +7,7 @@ class Empleado(models.Model):
 	"""docstring for Empleado"""
 	empleado = models.CharField(max_length=50, primary_key=True)
 	puesto =models.ForeignKey(Puesto, null=False, blank=False, on_delete=models.CASCADE)
-	nombre_usuario = models.CharField(max_length=50)
+	nombre = models.CharField(max_length=50)
 	apellido_pat = models.CharField(max_length=50)
 	apellido_mat = models.CharField(max_length=50)
 	calle = models.CharField(max_length=50)
