@@ -5,11 +5,43 @@
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-	<h1 class="title">Lista de empleados</h1>
-    <a href="{% url 'index' %}" class="button is-gray">Volver a Inicio</a>
-    <a href="{% url 'empleados:create' %}" class="button is-primary">Registrar nuevo empleado</a>
-    <br><br>
+    <div class="header">
+        <section class="hero is-info">
+            <div class="hero-body">
+            <div class="container">
+                  <h1 class="title">
+                    <a class="button is-link is-info" href="adms.html">
+                    <a href="{% url 'index' %}" class="button is-gray">
+                       <span class="icon is-small">
+                          <i class="fas fa-arrow-left"></i>
+                       </span>
+                    </a>
+                    Lista de empleados
+                  </h1>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="section has-text-centered">
+                
+        <input class="input"type="text-centered" placeholder="Clave del Empleado" style=" width: 50%; margin-left: -5px;"> <!--Estilo Agregado--->  
+        <button class="button is-link">Buscar</button>
+        <button class="button is-info" href="addusd.html">Agregar</button>
+        <button class="button" href="addusd.html">Detalles</button>
+        <button class="button is-success">
+            <span>Editar</span>
+                <span class="icon is-small">
+                    <i class="fas fa-edit"></i>
+                </span>
+        </button>
+        <button class="button is-danger is-outlined">
+            <span>Elimnar</span>
+                <span class="icon is-small">
+                    <i class="fas fa-times"></i>
+                </span>
+        </button>
 
+<<<<<<< HEAD
     <table class="table">
         <thead>
             <tr>
@@ -45,12 +77,50 @@
                     </td>
                 </tr>
             {% empty %}
+=======
+        <br><br>
+
+        <table class="table">
+            <thead>
+>>>>>>> karina
                 <tr>
-                    <td colspan="4">No hay empleados.</td>
+                    <th># Empleado</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Calle</th>
+                    <th>Colonia</th>
+                    <th>Delegación</th>
+                    <th>Municipio</th>
+                    <th>Código Postal</th>
+                    <th>Acciones</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for empleado in empleado_list %}
+                    <tr>
+                        <td><a href="{% url 'empleados:detail' empleado.num_empleado %}">{{ empleado.num_empleado }}</a></td>
+                        <td>{{ empleado.nombre }}</td>
+                        <td>{{ empleado.apellido_paterno }}</td>
+                        <td>{{ empleado.apellido_materno }}</td>
+                        <td>{{ empleado.calle }}</td>
+                        <td>{{ empleado.colonia }}</td>
+                        <td>{{ empleado.delegacion }}</td>
+                        <td>{{ empleado.municipio }}</td>
+                        <td>{{ empleado.codigo_postal }}</td>
+                        <td>
+                            <a href="{% url 'empleados:update' empleado.num_empleado %}">Editar</a>
+                            <a href="{% url 'empleados:delete' empleado.num_empleado %}">Eliminar</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No hay empleados.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
