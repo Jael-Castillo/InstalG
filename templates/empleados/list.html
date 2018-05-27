@@ -14,6 +14,7 @@
         <thead>
             <tr>
                 <th># Empleado</th>
+                <th>Puesto</th>
                 <th>Nombre</th>
                 <th>Apellido Paterno</th>
                 <th>Apellido Materno</th>
@@ -28,7 +29,8 @@
         <tbody>
             {% for empleado in empleado_list %}
                 <tr>
-                    <td><a href="{% url 'empleados:detail' empleado.num_empleado %}">{{ empleado.num_empleado }}</a></td>
+                    <td><a href="{% url 'empleados:detail' empleado.pk %}">{{ empleado.pk }}</a></td>
+                    <td>{{ empleado.puesto }}</td>
                     <td>{{ empleado.nombre }}</td>
                     <td>{{ empleado.apellido_paterno }}</td>
                     <td>{{ empleado.apellido_materno }}</td>
@@ -38,8 +40,8 @@
                     <td>{{ empleado.municipio }}</td>
                     <td>{{ empleado.codigo_postal }}</td>
                     <td>
-                        <a href="{% url 'empleados:update' empleado.num_empleado %}">Editar</a>
-                        <a href="{% url 'empleados:delete' empleado.num_empleado %}">Eliminar</a>
+                        <a href="{% url 'empleados:update' empleado.pk %}">Editar</a>
+                        <a href="{% url 'empleados:delete' empleado.pk %}">Eliminar</a>
                     </td>
                 </tr>
             {% empty %}

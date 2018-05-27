@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Puesto
+
+
+class PuestoAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Puesto, PuestoAdmin)

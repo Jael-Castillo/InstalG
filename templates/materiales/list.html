@@ -1,11 +1,46 @@
 {% extends "base.html" %}
 
-{% block title %}Lista{% endblock title %}
+{% block title %}Lista de Materiales{% endblock title %}
 
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+    <h1 class="title">Lista de materiales</h1>
+    <a href="{% url 'index' %}" class="button is-gray">Volver a Inicio</a>
+    <a href="{% url 'materiales:create' %}" class="button is-primary">Registrar nuevo material</a>
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Proveedor</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Existencia</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for material in material_list %}
+                <tr>
+                    <td><a href="{% url 'materiales:detail' material.pk %}">{{ material.pk }}</a></td>
+                    <td>{{ material.proveedor }}</td>
+                    <td>{{ material.nombre }}</td>
+                    <td>{{ material.descripcion }}</td>
+                    <td>{{ material.existencia }}</td>
+                    <td>
+                        <a href="{% url 'materiales:update' material.pk %}">Editar</a>
+                        <a href="{% url 'materiales:delete' material.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay materiales.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
