@@ -5,7 +5,25 @@
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+    <h1 class="title">Detalle</h1>
+
+    <p><b># Instalación:</b> {{ instalacion.pk }}</p>
+    <p><b># Piso:</b> {{ instalacion.numero_piso }}</p>
+    <p><b>Fecha de instalación:</b> {{ instalacion.fecha_instalacion }}</p>
+    <p><b>Usuario de departamento:</b> {{ instalacion.usuario_departamento }}</p>
+    <p><b>Calle:</b> {{ instalacion.calle }}</p>
+    <p><b>Colonia:</b> {{ instalacion.colonia }}</p>
+    <p><b>Código Postal:</b> {{ instalacion.codigo_postal }}</p>
+    <p><b>Empleados:</b></p>
+    <ul>
+        {% for empleado in instalacion.empleados.all %}
+            <li>* {{ empleado }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'instalaciones:list' %}">Volver</a>
+    <a href="{% url 'instalaciones:delete' instalacion.pk %}">Eliminar</a>
+    <a href="{% url 'instalaciones:update' instalacion.pk %}">Editar</a>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
