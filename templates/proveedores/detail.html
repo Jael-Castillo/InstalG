@@ -5,7 +5,16 @@
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+    <h1 class="title">Detalle</h1>
+
+    <p><b>ID:</b> {{ proveedor.pk }}</p>
+    <p><b>Nombre:</b> {{ proveedor.nombre }}</p>
+    <p><b>Apellido:</b> {{ proveedor.apellido }}</p>
+    <p><b>Empresa:</b> {{ proveedor.empresa }}</p>
+
+    <a href="{% url 'proveedores:list' %}">Volver</a>
+    <a href="{% url 'proveedores:delete' proveedor.pk %}">Eliminar</a>
+    <a href="{% url 'proveedores:update' proveedor.pk %}">Editar</a>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
