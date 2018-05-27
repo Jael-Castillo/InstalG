@@ -1,18 +1,11 @@
 from django.db import models
 
-# from apps.puestos.models import Puesto
+from apps.puestos.models import Puesto
 
-
-PUESTOS = (
-	('1', 'Puesto 1'),
-	('2', 'Puesto 2'),
-	('3', 'Puesto 3'),
-)
 
 class Empleado(models.Model):
 	num_empleado = models.CharField("Número de Empleado", max_length=50, primary_key=True)
-	# puesto =models.ForeignKey(Puesto, null=False, blank=False, on_delete=models.CASCADE)
-	puesto = models.CharField("Puesto", max_length=50, choices=PUESTOS)
+	puesto = models.ForeignKey(Puesto, on_delete=models.CASCADE)
 	nombre = models.CharField("Nombre", max_length=50)
 	apellido_paterno = models.CharField("Apellido Paterno", max_length=50)
 	apellido_materno = models.CharField("Apellido Materno", max_length=50)
