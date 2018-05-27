@@ -24,25 +24,11 @@
     </div>
     <section class="section has-text-centered">
                 
-        <input class="input"type="text-centered" placeholder="Clave del Empleado" style=" width: 50%; margin-left: -5px;"> <!--Estilo Agregado--->  
+        <input class="input"type="text-centered" placeholder="Clave del Empleado" style=" width: 50%; margin-left: -5px;">
         <button class="button is-link">Buscar</button>
-        <button class="button is-info" href="addusd.html">Agregar</button>
-        <button class="button" href="addusd.html">Detalles</button>
-        <button class="button is-success">
-            <span>Editar</span>
-                <span class="icon is-small">
-                    <i class="fas fa-edit"></i>
-                </span>
-        </button>
-        <button class="button is-danger is-outlined">
-            <span>Elimnar</span>
-                <span class="icon is-small">
-                    <i class="fas fa-times"></i>
-                </span>
-        </button>
+        <a class="button is-info" href="{% url 'empleados:create' %}">Agregar</a>
 
-<<<<<<< HEAD
-    <table class="table">
+    <table class="table is-hoverable">
         <thead>
             <tr>
                 <th># Empleado</th>
@@ -72,54 +58,33 @@
                     <td>{{ empleado.municipio }}</td>
                     <td>{{ empleado.codigo_postal }}</td>
                     <td>
-                        <a href="{% url 'empleados:update' empleado.pk %}">Editar</a>
-                        <a href="{% url 'empleados:delete' empleado.pk %}">Eliminar</a>
+                        <a href="{% url 'empleados:detail' empleado.pk %}" class="button is-info is-outlined" title="Ver detalle">
+                            {# <span>Editar</span> #}
+                            <span class="icon is-small">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </a>
+                        <a href="{% url 'empleados:update' empleado.pk %}" class="button is-success is-outlined" title="Editar">
+                            {# <span>Editar</span> #}
+                            <span class="icon is-small">
+                                <i class="fas fa-pencil-alt"></i>
+                            </span>
+                        </a>
+                        <a href="{% url 'empleados:delete' empleado.pk %}" class="button is-danger is-outlined" title="Eliminar">
+                            {# <span>Eliminar</span> #}
+                            <span class="icon is-small">
+                                <i class="fas fa-trash"></i>
+                            </span>
+                        </a>
                     </td>
                 </tr>
             {% empty %}
-=======
-        <br><br>
-
-        <table class="table">
-            <thead>
->>>>>>> karina
                 <tr>
-                    <th># Empleado</th>
-                    <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Calle</th>
-                    <th>Colonia</th>
-                    <th>Delegación</th>
-                    <th>Municipio</th>
-                    <th>Código Postal</th>
-                    <th>Acciones</th>
+                    <td colspan="4">No hay empleados.</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for empleado in empleado_list %}
-                    <tr>
-                        <td><a href="{% url 'empleados:detail' empleado.num_empleado %}">{{ empleado.num_empleado }}</a></td>
-                        <td>{{ empleado.nombre }}</td>
-                        <td>{{ empleado.apellido_paterno }}</td>
-                        <td>{{ empleado.apellido_materno }}</td>
-                        <td>{{ empleado.calle }}</td>
-                        <td>{{ empleado.colonia }}</td>
-                        <td>{{ empleado.delegacion }}</td>
-                        <td>{{ empleado.municipio }}</td>
-                        <td>{{ empleado.codigo_postal }}</td>
-                        <td>
-                            <a href="{% url 'empleados:update' empleado.num_empleado %}">Editar</a>
-                            <a href="{% url 'empleados:delete' empleado.num_empleado %}">Eliminar</a>
-                        </td>
-                    </tr>
-                {% empty %}
-                    <tr>
-                        <td colspan="4">No hay empleados.</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+            {% endfor %}
+        </tbody>    
+    </table>
     </section>
 {% endblock content %}
 
