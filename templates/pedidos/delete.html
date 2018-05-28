@@ -7,7 +7,7 @@
 {% block content %}
     <h1 class="title">Eliminar</h1>
         
-    <p>¿Está seguro que desea eliminar el registro de <b>{{ instalacion }}</b>?</p>
+    <p>¿Está seguro que desea eliminar el registro de <b>{{ pedido }}</b>?</p>
     <form method="post">
         {% csrf_token %}
         <a href="{{ request.META.HTTP_REFERER }}" class="button is-text">NO</a>

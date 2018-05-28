@@ -89,4 +89,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # Indicamos donde se guardarán los archivos estáticos (JS, CSS, IMG)
-STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')

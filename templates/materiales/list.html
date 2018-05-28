@@ -18,6 +18,7 @@
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Existencia</th>
+                <th>Precio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                     <td>{{ material.nombre }}</td>
                     <td>{{ material.descripcion }}</td>
                     <td>{{ material.existencia }}</td>
+                    <td>{{ material.precio }}</td>
                     <td>
                         <a href="{% url 'materiales:update' material.pk %}">Editar</a>
                         <a href="{% url 'materiales:delete' material.pk %}">Eliminar</a>

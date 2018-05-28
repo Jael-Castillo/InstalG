@@ -1,11 +1,76 @@
 {% extends "base.html" %}
+{% load bulma_tags %}
 
 {% block title %}Formulario{% endblock title %}
 
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+    <h1 class="title">Formulario Pedido</h1>
+    <br>
+    {{ form.non_field_errors }}
+    <form method="post">
+        {% csrf_token %}
+        
+        {{ form|bulma }}
+    
+        <p>Materiales: <button id="btnAgregar" class="button is-success">Agregar +</button></p>
+        <div id="materialesContainer">
+            <div>
+                <select name="materiales[]" id="">
+                    {% for material in materiales %}
+                        <option value="{{ material.pk }}">{{ material.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" placeholder="Cantidad" name="cantidades[]">
+                <button class="button is-danger borrar">Borrar</button>
+            </div>
+        </div>
+
+        <br>
+        <a href="{{ request.META.HTTP_REFERER }}" class="button is-text">Cancelar</a>
+        <input type="submit" value="Guardar" class="button is-primary">
+    </form>
 {% endblock content %}
 
-{% block extra-js %}{% endblock extra-js %}
+{% block extra-js %}
+    <script>
+        const materiales = {{ materiales_json|safe }}
+        const btnAgregar = document.querySelector('#btnAgregar')
+        const materialesContainer = document.querySelector('#materialesContainer')
+
+        btnAgregar.addEventListener('click', e => {
+            e.preventDefault()
+            const div = document.createElement('div')
+            const select = document.createElement('select')
+            const input = document.createElement('input')
+            const btnBorrar = document.createElement('button')
+
+            select.setAttribute('name', 'materiales[]');
+            input.setAttribute('name', 'cantidades[]');
+            input.setAttribute('placeholder', 'Cantidad');
+            btnBorrar.setAttribute('class', 'button is-danger borrar');
+            btnBorrar.append('Borrar')
+
+            materiales.forEach(material => {
+                const option = document.createElement('option')
+                option.setAttribute('value', material.pk);
+                option.append(material.fields.nombre)
+
+                select.append(option)
+            })
+
+            div.append(select)
+            div.append(input)
+            div.append(btnBorrar)
+            materialesContainer.append(div)
+        })
+
+        document.addEventListener('click', e => {
+            if (e.target && e.target.classList.contains('borrar')){
+                e.preventDefault()
+                e.target.parentNode.remove()
+            }
+        })
+    </script>
+{% endblock extra-js %}

@@ -1,12 +1,12 @@
 from django import forms
 
-from .models import Instalacion
+from .models import Pedido
 
 
-class InstalacionForm(forms.ModelForm):
+class PedidoForm(forms.ModelForm):
     class Meta:
-        model = Instalacion
-        fields = '__all__'
+        model = Pedido
+        fields = ['empleado', 'instalacion', 'fecha', 'hora']
 
         widgets = {
             'fecha': forms.DateInput(attrs={'type': 'date'},  format='%Y-%m-%d'),

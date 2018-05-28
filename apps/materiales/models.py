@@ -8,9 +8,10 @@ class Material(models.Model):
     nombre = models.CharField("Nombre", max_length=50)
     existencia = models.CharField("Existencia", max_length=50)
     descripcion = models.CharField("Descripción", max_length=50)
+    precio = models.FloatField()
 
     class Meta:
         ordering = ['id']
 
     def __str__(self):
-        return f"{self.id} - {self.nombre} {self.apellido_paterno} {self.apellido_materno}"
+        return f"{self.nombre}"

@@ -5,7 +5,25 @@
 {% block extra-css %}{% endblock extra-css %}
 
 {% block content %}
-    Contenido
+    <h1 class="title">Detalle</h1>
+
+    <p><b># Pedido:</b> {{ pedido.pk }}</p>
+    <p><b>Empleado:</b> {{ pedido.empleado }}</p>
+    <p><b>Instalación:</b> {{ pedido.istalacion }}</p>
+    <p><b>Fecha:</b> {{ pedido.fecha }}</p>
+    <p><b>Hora:</b> {{ pedido.hora }}</p>
+    <p><b>Total:</b> {{ pedido.total }}</p>
+    <p><b>IVA:</b> {{ pedido.iva }}</p>
+    <p><b>Materiales:</b></p>
+    <ul>
+        {# {% for empleado in pedido.empleados.all %}
+            <li>* {{ empleado }}</li>
+        {% endfor %} #}
+    </ul>
+
+    <a href="{% url 'pedidos:list' %}">Volver</a>
+    <a href="{% url 'pedidos:delete' pedido.pk %}">Eliminar</a>
+    <a href="{% url 'pedidos:update' pedido.pk %}">Editar</a>
 {% endblock content %}
 
 {% block extra-js %}{% endblock extra-js %}
