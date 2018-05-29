@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Detalle</h1>
+
+    <p><b>ID:</b> {{ puesto.pk }}</p>
+    <p><b>Nombre:</b> {{ puesto.nombre }}</p>
+    <p><b>Estado:</b> {% if puesto.estado %} Activo {% else %} Inactivo {% endif %}</p>
+    <p><b>Tipo Contrato:</b> {{ puesto.tipo_contrato }}</p>
+
+    <a href="{% url 'puestos:list' %}">Volver</a>
+    <a href="{% url 'puestos:delete' puesto.pk %}">Eliminar</a>
+    <a href="{% url 'puestos:update' puesto.pk %}">Editar</a>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

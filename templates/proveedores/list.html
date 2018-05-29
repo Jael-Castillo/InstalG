@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Proveedores{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Lista de proveedores</h1>
+    <a href="{% url 'index' %}" class="button is-gray">Volver a Inicio</a>
+    <a href="{% url 'proveedores:create' %}" class="button is-primary">Registrar nuevo proveedor</a>
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Empresa</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in proveedor_list %}
+                <tr>
+                    <td><a href="{% url 'proveedores:detail' proveedor.pk %}">{{ proveedor.pk }}</a></td>
+                    <td>{{ proveedor.nombre }}</td>
+                    <td>{{ proveedor.apellido }}</td>
+                    <td>{{ proveedor.empresa }}</td>
+                    <td>
+                        <a href="{% url 'proveedores:update' proveedor.pk %}">Editar</a>
+                        <a href="{% url 'proveedores:delete' proveedor.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay proveedores.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

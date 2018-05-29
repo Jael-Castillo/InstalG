@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Detalle</h1>
+
+    <p><b>ID:</b> {{ material.pk }}</p>
+    <p><b>Nombre:</b> {{ material.nombre }}</p>
+    <p><b>Proveedor:</b> {{ material.proveedor }}</p>
+    <p><b>Descripción:</b> {{ material.descripcion }}</p>
+    <p><b>Existencia:</b> {{ material.existencia }}</p>
+
+    <a href="{% url 'materiales:list' %}">Volver</a>
+    <a href="{% url 'materiales:delete' material.pk %}">Eliminar</a>
+    <a href="{% url 'materiales:update' material.pk %}">Editar</a>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

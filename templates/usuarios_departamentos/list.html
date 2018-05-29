@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Usuarios de Departamentos{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Lista de usuarios de departamentos</h1>
+    <a href="{% url 'index' %}" class="button is-gray">Volver a Inicio</a>
+    <a href="{% url 'usuarios_departamentos:create' %}" class="button is-primary">Registrar nuevo usuario de departamento</a>
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>RFC</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario_departamento in usuario_departamento_list %}
+                <tr>
+                    <td><a href="{% url 'usuarios_departamentos:detail' usuario_departamento.pk %}">{{ usuario_departamento.pk }}</a></td>
+                    <td>{{ usuario_departamento.nombre }}</td>
+                    <td>{{ usuario_departamento.apellido_paterno }}</td>
+                    <td>{{ usuario_departamento.apellido_materno }}</td>
+                    <td>
+                        <a href="{% url 'usuarios_departamentos:update' usuario_departamento.pk %}">Editar</a>
+                        <a href="{% url 'usuarios_departamentos:delete' usuario_departamento.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay usuarios de departamentos.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

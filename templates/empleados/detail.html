@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Detalle</h1>
+
+    <p><b># Empleado:</b> {{ empleado.pk }}</p>
+    <p><b>Nombre:</b> {{ empleado.nombre }}</p>
+    <p><b>Puesto:</b> {{ empleado.puesto }}</p>
+    <p><b>Apellido Paterno:</b> {{ empleado.apellido_paterno }}</p>
+    <p><b>Apellido Materno:</b> {{ empleado.apellido_materno }}</p>
+    <p><b>Calle:</b> {{ empleado.calle }}</p>
+    <p><b>Colonia:</b> {{ empleado.colonia }}</p>
+    <p><b>Delegación:</b> {{ empleado.delegacion }}</p>
+    <p><b>Municipio:</b> {{ empleado.municipio }}</p>
+    <p><b>Código Postal:</b> {{ empleado.codigo_postal }}</p>
+
+    <a href="{% url 'empleados:list' %}">Volver</a>
+    <a href="{% url 'empleados:delete' empleado.pk %}">Eliminar</a>
+    <a href="{% url 'empleados:update' empleado.pk %}">Editar</a>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

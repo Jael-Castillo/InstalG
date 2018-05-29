@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="icon" type="img/png" href="{% static 'img/icon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    
+    {% block extra-css %}{% endblock extra-css %}
+</head>
+<body>
+    {% block content %}{% endblock content %}
+    
+
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    
+    {% block extra-js %}{% endblock extra-js %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Eliminar{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Eliminar</h1>
+        
+    <p>¿Está seguro que desea eliminar el registro de <b>{{ puesto }}</b>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <a href="{{ request.META.HTTP_REFERER }}" class="button is-text">NO</a>
+        <input type="submit" value="SI" class="button is-primary">
+    </form>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

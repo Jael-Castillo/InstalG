@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load bulma_tags %}
+
+{% block title %}Formulario{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Formulario Usuario de Departamento</h1>
+    <br>
+    {{ form.non_field_errors }}
+    <form method="post">
+        {% csrf_token %}
+        
+        {{ form|bulma }}
+
+        <br>
+        <a href="{{ request.META.HTTP_REFERER }}" class="button is-text">Cancelar</a>
+        <input type="submit" value="Guardar" class="button is-primary">
+    </form>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Puestos{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Lista de puestos</h1>
+    <a href="{% url 'index' %}" class="button is-gray">Volver a Inicio</a>
+    <a href="{% url 'puestos:create' %}" class="button is-primary">Registrar nuevo puesto</a>
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Tipo Contrato</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for puesto in puesto_list %}
+                <tr>
+                    <td><a href="{% url 'puestos:detail' puesto.pk %}">{{ puesto.pk }}</a></td>
+                    <td>{{ puesto.nombre }}</td>
+                    <td>{% if puesto.estado %} Activo {% else %} Inactivo {% endif %}</td>
+                    <td>{{ puesto.tipo_contrato }}</td>
+                    <td>
+                        <a href="{% url 'puestos:update' puesto.pk %}">Editar</a>
+                        <a href="{% url 'puestos:delete' puesto.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay puestos.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}

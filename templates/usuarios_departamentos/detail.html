@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle{% endblock title %}
+
+{% block extra-css %}{% endblock extra-css %}
+
+{% block content %}
+    <h1 class="title">Detalle</h1>
+
+    <p><b>RFC:</b> {{ usuario_departamento.pk }}</p>
+    <p><b>Nombre:</b> {{ usuario_departamento.nombre }}</p>
+    <p><b>Apellido Paterno:</b> {{ usuario_departamento.apellido_paterno }}</p>
+    <p><b>Apellido Materno:</b> {{ usuario_departamento.apellido_materno }}</p>
+
+    <a href="{% url 'usuarios_departamentos:list' %}">Volver</a>
+    <a href="{% url 'usuarios_departamentos:delete' usuario_departamento.pk %}">Eliminar</a>
+    <a href="{% url 'usuarios_departamentos:update' usuario_departamento.pk %}">Editar</a>
+{% endblock content %}
+
+{% block extra-js %}{% endblock extra-js %}
